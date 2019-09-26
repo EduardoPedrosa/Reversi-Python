@@ -44,15 +44,14 @@ class Computer(object):
     def __init__(self, color, prune=3):
         self.depthLimit = prune
         evaluator = Evaluator()
-        self.minimaxObj = Minimax(evaluator.score)
+        self.minimaxObj = Minimax(evaluator.score, color)
         self.color = color
 
     def get_current_board(self, board):
         self.current_board = board
 
     def get_move(self):
-        return self.minimaxObj.minimax(self.current_board, None, self.depthLimit, self.color,
-                                       change_color(self.color))
+        return self.minimaxObj.minimax(self.current_board, None, self.depthLimit, self.color)
 
 
 class RandomPlayer (Computer):
