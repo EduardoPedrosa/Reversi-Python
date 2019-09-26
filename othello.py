@@ -36,11 +36,11 @@ class Othello:
         if player1 == "human":
             self.now_playing = player.Human(self.gui, BLACK)
         else:
-            self.now_playing = player.Computer(BLACK, level + 3)
+            self.now_playing = player.Computer(BLACK, level)
         if player2 == "human":
             self.other_player = player.Human(self.gui, WHITE)
         else:
-            self.other_player = player.Computer(WHITE, level + 3)
+            self.other_player = player.Computer(WHITE, level)
 
         self.gui.show_game()
         self.gui.update(self.board.board, 2, 2, self.now_playing.color)
