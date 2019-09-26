@@ -41,9 +41,9 @@ class Human:
 
 class Computer(object):
 
-    def __init__(self, color, prune=3):
-        self.depthLimit = prune
-        evaluator = Evaluator()
+    def __init__(self, color, level=3):
+        self.depthLimit = level
+        evaluator = Evaluator(level)
         self.minimaxObj = Minimax(evaluator.score)
         self.color = color
 
