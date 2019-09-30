@@ -22,14 +22,15 @@ class Minimax(object):
         self.heuristic_eval = heuristic_eval
     
     def minimax(self, board, parentBoard, depth, player):
-        #calculating if it's a leaf node: 
-        ###############
+        #calculating if it's a leaf node:
+        childrenQuantity = sum(1 for child in board.next_states(player))
         
-        if ((len(board.next_states(player)) == 0) or (depth == 0)): ##If it's a leaf node or depth == 0
+        if ((childrenQuantity == 0) or (depth == 0)): ##If it's a leaf node or depth == 0
             return (self.heuristic_eval(parentBoard, board, depth, player, change_color(player)), board)
         
-        print(player, depth)
+        
         if player == self.aiPlayer:
+            
             alfa = -inf
             for child in board.next_states(player):
                 bestChild = child
@@ -37,10 +38,11 @@ class Minimax(object):
                 alfa = max(alfa, score)
                 if alfa == score:
                     bestChild = board
+            print('Weight: ' + str(alfa))
             return (alfa, bestChild)
         else:
+
             alfa = inf
-            
             for child in board.next_states(player):
                 bestChild = child
                 score, board = self.minimax(child, board, depth-1, change_color(player))

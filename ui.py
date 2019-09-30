@@ -185,7 +185,7 @@ class Gui:
                     elif two_pos.collidepoint(mouse_x, mouse_y):
                         return 2
                     elif three_pos.collidepoint(mouse_x, mouse_y):
-                        return 4
+                        return 3
 
             pygame.display.flip()
             # desafoga a cpu

@@ -10,7 +10,7 @@ class Evaluator(object):
             self.WEIGHT_MATRIX = self.WORST_WEIGHT_MATRIX
         if(level == 2):
             self.WEIGHT_MATRIX = self.MEDIUM_WEIGHT_MATRIX
-        if(level == 4):
+        if(level == 3):
             self.WEIGHT_MATRIX = self.BEST_WEIGHT_MATRIX
 
     WORST_WEIGHT_MATRIX = [
@@ -37,12 +37,12 @@ class Evaluator(object):
 
     BEST_WEIGHT_MATRIX = [
                     [64,-8, 8, 8, 8, 8,-8,64],
-                    [-8,-8, 1, 1, 1, 1,-8,-8],
-                    [ 8, 1, 1, 1, 1, 1, 1, 8],
-                    [ 8, 1, 1, 1, 1, 1, 1, 8],
-                    [ 8, 1, 1, 1, 1, 1, 1, 8],
-                    [ 8, 1, 1, 1, 1, 1, 1, 8],
-                    [-8,-8, 1, 1, 1, 1,-8,-8],
+                    [-8,-8,-2,-2,-2,-2,-8,-8],
+                    [ 8,-2, 1, 1, 1, 1,-2, 8],
+                    [ 8,-2, 1, 1, 1, 1,-2, 8],
+                    [ 8,-2, 1, 1, 1, 1,-2, 8],
+                    [ 8,-2, 1, 1, 1, 1,-2, 8],
+                    [-8,-8,-2,-2,-2,-2,-8,-8],
                     [64,-8, 8, 8, 8, 8,-8,64],
                     ]
 
