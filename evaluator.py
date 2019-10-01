@@ -2,7 +2,6 @@ from config import BLACK, WHITE, EMPTY
 from random import randint
 
 class Evaluator(object):
-
     def __init__(self, level):
         super().__init__()
         self.level = level
@@ -47,33 +46,21 @@ class Evaluator(object):
                     ]
 
 
-    def score(self, startBoard, board, currentDepth, player, opponent):
-        """ Determine the score of the given board for the specified player.
-        - startBoard the board before any move is made
-        - board the board to score
-        - currentDepth depth of this leaf in the game tree
-        - searchDepth depth used for searches.
-        - player current player's color
-        - opponent opponent's color
-        """
-
-        self.player = player
-        self.enemy = opponent
+    def score(self, board, currentDepth, player, opponent):
         whites, blacks, empty = board.count_stones()
 
         # check wipe out
-        if (self.player == WHITE and whites == 0) or (self.player == BLACK and blacks == 0):
+        if (player == WHITE and whites == 0) or (player == BLACK and blacks == 0):
             return -1000
-        if (self.enemy == WHITE and whites == 0) or (self.enemy == BLACK and blacks == 0):
+        if (opponent == WHITE and whites == 0) or (opponent == BLACK and blacks == 0):
             return 1000
 
         score = 0
-
         # determine weigths according to the number of pieces
         for i in range (0,8):
             for j in range (0,8):
-                if(board.board[i][j] == self.player):
-                    score += self.WEIGHT_MATRIX[i][j]
-                if(board.board[i][j] == self.enemy):
-                    score -= self.WEIGHT_MATRIX[i][j]
+                if(board.board[i][j] == player):
+                    score += (self.WEIGHT_MATRIX[i][j])
+                if(board.board[i][j] == opponent):
+                    score -= (self.WEIGHT_MATRIX[i][j])
         return score
