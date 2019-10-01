@@ -280,22 +280,6 @@ class Board:
                     empty += 1
         return whites, blacks, empty
 
-    def compare(self, otherBoard):
-        """Return a board containing only the squares that are empty in one
-        of the boards and not empty on the other.
-
-        """
-        diffBoard = Board()
-        diffBoard.board[3][4] = 0
-        diffBoard.board[3][3] = 0
-        diffBoard.board[4][3] = 0
-        diffBoard.board[4][4] = 0
-        for i in range(8):
-            for j in range(8):
-                if otherBoard.board[i][j] != self.board[i][j]:
-                    diffBoard.board[i][j] = otherBoard.board[i][j]
-        return otherBoard
-
     def get_adjacent_count(self, color):
         """Return how many empty squares there are on the board adjacent to
 the specified color."""

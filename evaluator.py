@@ -60,8 +60,6 @@ class Evaluator(object):
         self.player = player
         self.enemy = opponent
         whites, blacks, empty = board.count_stones()
-        deltaBoard = board.compare(startBoard)
-        deltaCount = sum(deltaBoard.count_stones())
 
         # check wipe out
         if (self.player == WHITE and whites == 0) or (self.player == BLACK and blacks == 0):
@@ -74,8 +72,8 @@ class Evaluator(object):
         # determine weigths according to the number of pieces
         for i in range (0,8):
             for j in range (0,8):
-                if(deltaBoard.board[i][j] == self.player):
+                if(board.board[i][j] == self.player):
                     score += self.WEIGHT_MATRIX[i][j]
-                if(deltaBoard.board[i][j] == self.enemy):
+                if(board.board[i][j] == self.enemy):
                     score -= self.WEIGHT_MATRIX[i][j]
         return score
