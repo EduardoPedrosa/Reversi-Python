@@ -51,7 +51,10 @@ class Computer(object):
         self.current_board = board
 
     def get_move(self):
-        return self.minimaxObj.minimax(self.current_board, None, self.depthLimit, self.color)
+        score, board = self.minimaxObj.minimax(self.current_board, None, self.depthLimit, self.color, change_color(self.color))
+        print(score)
+        print('--------------------------------')
+        return (score, board)
 
 
 class RandomPlayer (Computer):

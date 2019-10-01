@@ -65,9 +65,9 @@ class Evaluator(object):
 
         # check wipe out
         if (self.player == WHITE and whites == 0) or (self.player == BLACK and blacks == 0):
-            return -300
+            return -1000
         if (self.enemy == WHITE and whites == 0) or (self.enemy == BLACK and blacks == 0):
-            return 300
+            return 1000
 
         score = 0
 

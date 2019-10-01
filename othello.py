@@ -66,7 +66,7 @@ class Othello:
                                 self.now_playing.color)
             self.now_playing, self.other_player = self.other_player, self.now_playing
         self.gui.show_winner(winner)
-        pygame.time.wait(1000)
+        pygame.time.wait(5000)
         self.restart()
 
     def restart(self):
