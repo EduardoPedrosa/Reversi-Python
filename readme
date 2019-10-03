@@ -1,18 +1,20 @@
-****************  Othello  *******************
-Simple othello game with computer oponent intended for simple ai learning purposes.
-References:
-* http://lurgee.net/reversi-code/
+#Reversi em Python
 
-License:
-GPL
+Eduardo Miranda Pedrosa Filho
+João Pedro Fachini Alvarenga
+Referências:
+https://github.com/humbhenri/pyOthello
 
-To play:
-Run othello.py
+Dependências:
+  Python
+  pygame - www.pygame.org
+  
+Para instalar o pygame
+```console
+  pip3 install pygame
+```
 
-Dependencies:
-Python
-pygame - www.pygame.org
-
-humbhenri at gmail.com
-Humberto Henrique Campos Pinheiro
-
+Para executar
+```console
+python3 othello.py
+```
