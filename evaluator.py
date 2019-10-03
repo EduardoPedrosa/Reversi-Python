@@ -54,7 +54,7 @@ class Evaluator(object):
             return -1000
         if (opponent == WHITE and whites == 0) or (opponent == BLACK and blacks == 0):
             return 1000
-
+            
         score = 0
         # determine weigths according to the number of pieces
         for i in range (0,8):

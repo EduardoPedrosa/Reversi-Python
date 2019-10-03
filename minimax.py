@@ -33,6 +33,7 @@ class Minimax(object):
         
         bestChild = board
         if player != self.aiPlayer:    #Maximizar
+            #A pior jogada do adversário é a melhor do player
             alfa = -inf
             for child in board.next_states(player):
                 score, childBoard = self.minimax(child, currentDepth-1, oponent)
@@ -41,6 +42,7 @@ class Minimax(object):
                     alfa = score
                     bestChild = child
         else:   #Minimizar
+            #A melhor jogada do player é a pior do adversário
             alfa = inf
             for child in board.next_states(player):
                 score, childBoard = self.minimax(child, currentDepth-1, oponent)
