@@ -52,8 +52,6 @@ class Computer(object):
 
     def get_move(self):
         score, board = self.minimaxObj.minimax(self.current_board, self.depthLimit, self.color)
-        print(score)
-        print('--------------------------------')
         return (score, board)
 
 
