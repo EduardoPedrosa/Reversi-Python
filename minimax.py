@@ -28,7 +28,6 @@ class Minimax(object):
         oponent = change_color(player)
 
         if ((childrenQuantity == 0) or (currentDepth == 0)): ##If it's a leaf node or currentDepth == 0
-            print('Nível: ' + str(currentDepth) + ' Score: ' + str(self.heuristic_eval(board, currentDepth, player, oponent)))
             return (self.heuristic_eval(board, currentDepth, player, oponent), board)
         
         bestChild = board
@@ -50,5 +49,4 @@ class Minimax(object):
                 if score < alfa:
                     alfa = score
                     bestChild = child
-        print('Nível: ' + str(currentDepth) + ' Score: ' + str(alfa))
         return (alfa, bestChild)
