@@ -2,6 +2,7 @@
 
 Eduardo Miranda Pedrosa Filho
 João Pedro Fachini Alvarenga
+
 Referências:
 https://github.com/humbhenri/pyOthello
 
